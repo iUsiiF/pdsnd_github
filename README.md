@@ -6,11 +6,11 @@ Include the date you created this project and README file.
 
 ### Project Title
 Replace the Project Title
-Github_bikeshare
+Github_bikeshare_project
 
 ### Description
 Describe what your project is about and what it does
-exploring data of multiple bikeshare location
+exploring data of multiple bikeshare location and station
 
 ### Files used
 Include the files used
