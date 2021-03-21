@@ -208,8 +208,10 @@ def main():
         display_data(df)
         
 
-
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        while True:
+            restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
+            if restart in ('yes', 'no'):
+                break
         if restart.lower() != 'yes':
             break
 
