@@ -65,7 +65,11 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    df = pd.read_csv(CITY_DATA[city])
+    try:
+        df = pd.read_csv(CITY_DATA[city])
+    except FileNotFoundError:
+        print('FileNotFoundError')
+        return
 
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -200,12 +204,13 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
+        if df:
 
-        time_stats(df)
-        station_stats(df)
-        trip_duration_stats(df)
-        user_stats(df,city)
-        display_data(df)
+            time_stats(df)
+            station_stats(df)
+            trip_duration_stats(df)
+            user_stats(df,city)
+            display_data(df)
         
 
         while True:
